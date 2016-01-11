@@ -42,10 +42,7 @@ def main(argv=sys.argv):
         usage(argv)
     config_uri = argv[1]
     setup_logging(config_uri)
-    engine = create_engine(
-        os.environ.get('DATABASE_URL',
-                       'postgresql://homework@/homework')
-    )
+    engine = create_engine('postgresql://homework@/homework')
     dbsession  = create_dbsession(engine)
     service = ListingService(dbsession)
     r = requests.get('https://s3.amazonaws.com/opendoor-problems/listings.csv')

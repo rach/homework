@@ -10,9 +10,7 @@ import os
 
 
 def includeme(config):
-    engine = create_engine(
-        os.environ.get('DATABASE_URL')
-    )
+    engine = create_engine('postgresql://homework@/homework')
     if 'dbsession' not in config.registry.settings:
         dbsession = create_dbsession(engine)
         zope.sqlalchemy.register(dbsession)
