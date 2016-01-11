@@ -47,6 +47,10 @@ populate_db development.ini
 
     python setup.py test
 
+##How to run
+
+    pserve development.ini http_port=8080
+
 ##Extra
 
 As I decided to return only the active listing per default.
