@@ -63,3 +63,11 @@ I used cursor base pagination (see Links header):
 As we have GIS data, I added a filter per distance (in km)
 
     curl "/listings?coord=-112.1151215344,-33.4767593059&distance=1"
+
+##Code Design
+
+I isolated the IO's in services because it has some benefits in code design:
+- More easy to test as you can test the service individually
+- Easy to create stub for testing, if you want to write test to mimic behaviours or not doing useless IO's
+- Isolated from the web frameworks so it's more easy to bring people in there is less knowledge required
+- Design by contract, if the datastore/logic change then web app code doesn't change (much)
