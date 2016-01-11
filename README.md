@@ -1,5 +1,7 @@
 #HOMEWORK
 
+Pagination is enabled so it returns 10 items max.
+
 ##Assumptions
 
 - Listing can be huge and the listing and has to be fast if used by a webapp. I try to avoid table scan and using a btree index no matter the params searched. It will have the downside of a bigger database
